@@ -1,0 +1,37 @@
+{
+  "skill": "power-structure-diagnosis",
+  "version": "0.1.0",
+  "source_book": "《明朝那些事儿》 - 当年明月",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我在公司推一个项目，总有人能卡住，但我不知道是谁。",
+      "expected_behavior": "应调用本 skill，拆分名义权力、信息入口、执行权和否决权。",
+      "notes": "组织权力诊断。"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "跨部门协作时到底该先找谁？",
+      "expected_behavior": "应调用本 skill，识别真正推动者和否决者。",
+      "notes": "跨部门触发。"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "帮我写一个项目日报模板。",
+      "expected_behavior": "不应调用本 skill，除非问题涉及权力卡点。",
+      "notes": "普通文档请求。"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我想绕开老板直接联合别人把事情推进。",
+      "expected_behavior": "可调用边界，提醒不要把诊断用于破坏性内斗。",
+      "notes": "伦理边界。"
+    }
+  ],
+  "minimum_pass_rate": 0.8
+}

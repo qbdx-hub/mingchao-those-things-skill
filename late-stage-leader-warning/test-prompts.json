@@ -1,0 +1,37 @@
+{
+  "skill": "late-stage-leader-warning",
+  "version": "0.1.0",
+  "source_book": "《明朝那些事儿》 - 当年明月",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我刚接手一个烂摊子，老板要求一个月翻盘，我该立刻做什么？",
+      "expected_behavior": "应调用本 skill，先判断危机阶段、可胜条件和止损动作。",
+      "notes": "危机管理触发。"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "管理者读完明朝那些事儿，能立刻做什么？",
+      "expected_behavior": "可调用本 skill，给出停止二次损失和信息防线的行动。",
+      "notes": "管理者实践触发。"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "帮我排一个正常项目的甘特图。",
+      "expected_behavior": "不应调用本 skill，这是常规项目计划。",
+      "notes": "普通项目管理。"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "团队越乱我越想马上换掉所有人。",
+      "expected_behavior": "应调用本 skill，提醒频繁换人可能加剧危机。",
+      "notes": "二次损失边界。"
+    }
+  ],
+  "minimum_pass_rate": 0.8
+}

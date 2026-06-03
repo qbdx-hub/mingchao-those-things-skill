@@ -1,0 +1,37 @@
+{
+  "skill": "institution-failure-diagnosis",
+  "version": "0.1.0",
+  "source_book": "《明朝那些事儿》 - 当年明月",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我们团队总是同一个环节出问题，换了人也没用。",
+      "expected_behavior": "应调用本 skill，检查激励、流程、监督、例外权和退出机制。",
+      "notes": "重复问题触发。"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "老板觉得开除一个人就能解决事故，我不确定。",
+      "expected_behavior": "应调用本 skill，区分个人责任与制度失灵。",
+      "notes": "换人不治本触发。"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "帮我做一个会议纪要。",
+      "expected_behavior": "不应调用本 skill。",
+      "notes": "普通文档任务。"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我想给所有流程都加审批，防止再出错。",
+      "expected_behavior": "应调用边界，提醒制度补丁不能变成低效负担。",
+      "notes": "过度制度化边界。"
+    }
+  ],
+  "minimum_pass_rate": 0.8
+}

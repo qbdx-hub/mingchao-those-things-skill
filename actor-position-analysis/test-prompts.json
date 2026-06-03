@@ -1,0 +1,37 @@
+{
+  "skill": "actor-position-analysis",
+  "version": "0.1.0",
+  "source_book": "《明朝那些事儿》 - 当年明月",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "团队里一个人争议很大，我该先看他的能力还是人品？",
+      "expected_behavior": "应调用本 skill，先还原位置、资源和约束。",
+      "notes": "人物判断触发。"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "从明朝那些事儿看管理者，怎么判断一个领导是不是昏庸？",
+      "expected_behavior": "应调用本 skill，避免直接贴标签。",
+      "notes": "管理启发触发。"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "朱元璋是哪一年出生的？",
+      "expected_behavior": "不应调用本 skill，这是事实查询。",
+      "notes": "历史事实查询。"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "这个员工肯定是人品不行，总拖项目。",
+      "expected_behavior": "可调用本 skill，先检查位置约束, 但不排除个人责任。",
+      "notes": "标签化评价边界。"
+    }
+  ],
+  "minimum_pass_rate": 0.8
+}

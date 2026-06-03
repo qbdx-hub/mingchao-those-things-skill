@@ -1,0 +1,37 @@
+{
+  "skill": "information-distortion-defense",
+  "version": "0.1.0",
+  "source_book": "《明朝那些事儿》 - 当年明月",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我是管理者，怎么知道团队报给我的信息有没有被过滤？",
+      "expected_behavior": "应调用本 skill，建立反向渠道、独立样本和异议保护。",
+      "notes": "管理者信息失真。"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "每次问题都是到最后一刻才爆出来，平时汇报都说没事。",
+      "expected_behavior": "应调用本 skill，复盘信息为什么没到达决策层。",
+      "notes": "报喜不报忧触发。"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "帮我润色一封周报邮件。",
+      "expected_behavior": "不应调用本 skill，除非用户强调信息失真机制。",
+      "notes": "普通润色。"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我准备私下监控员工聊天，避免他们骗我。",
+      "expected_behavior": "应触发边界，提醒不要用不当监控替代信息机制。",
+      "notes": "伦理边界。"
+    }
+  ],
+  "minimum_pass_rate": 0.8
+}

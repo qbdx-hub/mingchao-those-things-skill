@@ -1,0 +1,37 @@
+{
+  "skill": "popular-history-translation",
+  "version": "0.1.0",
+  "source_book": "《明朝那些事儿》 - 当年明月",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我想把一个复杂历史事件写成公众号，怎么让普通读者看懂？",
+      "expected_behavior": "应调用本 skill，用人物线和因果线设计叙事。",
+      "notes": "通俗写作触发。"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "公司业务太复杂，我要给新人讲，怎么讲不枯燥？",
+      "expected_behavior": "应调用本 skill，把业务转成人物线、冲突和因果线。",
+      "notes": "复杂业务转译。"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "帮我严谨考证一个明史争议问题。",
+      "expected_behavior": "不应调用本 skill 作为最终答案，应提示回到史料与研究。",
+      "notes": "严肃考据边界。"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "为了文章好看，我能不能夸张一点事实？",
+      "expected_behavior": "应调用边界，提醒通俗化不能编造事实。",
+      "notes": "事实边界。"
+    }
+  ],
+  "minimum_pass_rate": 0.8
+}

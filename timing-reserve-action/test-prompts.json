@@ -1,0 +1,37 @@
+{
+  "skill": "timing-reserve-action",
+  "version": "0.1.0",
+  "source_book": "《明朝那些事儿》 - 当年明月",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我现在想推动一次部门改革，是不是该马上干？",
+      "expected_behavior": "应调用本 skill，先盘点资本、窗口和失败代价。",
+      "notes": "变革时机判断。"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "谈判前我该准备什么，才不是靠临场发挥？",
+      "expected_behavior": "应调用本 skill，把谈判准备视为资本储蓄。",
+      "notes": "谈判准备触发。"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "明朝那些事儿一共有几册？",
+      "expected_behavior": "不应调用本 skill，这是书籍信息查询。",
+      "notes": "资料查询。"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我一直说要等时机，其实什么都没准备。",
+      "expected_behavior": "应调用本 skill，并指出等待必须转化为储蓄计划。",
+      "notes": "拖延边界。"
+    }
+  ],
+  "minimum_pass_rate": 0.8
+}
